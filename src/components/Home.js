@@ -1,39 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 // Component imports
 import MainStyles from './styles/MainStyles';
 import SkillsStyles from './styles/SkillsStyles';
+import ClientsStyles from './styles/ClientsStyles';
 
 // Image imports
 import pencil from '../static/images/writing icon.png';
 import bullhorn from '../static/images/speaking icon.png';
 import profile from '../static/images/profile1.png';
-
-const ClientsStyles = styled.section`
-  background: var(--light-grey);
-  text-align: center;
-  h2 {
-    color: var(--green);
-    padding-top: 4rem;
-    text-transform: uppercase;
-  }
-  p {
-    margin: 1rem 0 4rem 0;
-  }
-  .images {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
-    padding-bottom: 5rem;
-  }
-  .image {
-    width: 150px;
-    height: 50px;
-  }
-`;
 
 const Home = () => (
   <>
