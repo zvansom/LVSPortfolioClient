@@ -3,6 +3,7 @@
   --green-bright: #3cb878;
   --logo-grey: #707070;
   --black: #131313;
+  --light-grey: #FAFAFC;
 }
 @font-face {
   font-family: 'Milkshake';
@@ -35,4 +36,13 @@ body {
 a {
   text-decoration: none;
   color: var(--black);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
 }

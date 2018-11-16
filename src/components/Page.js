@@ -21,6 +21,7 @@ const Page = () => (
       {/* <Route path="/portfolio" component={Portfolio} /> */}
       {/* <Route path="/services" component={Services} /> */}
       {/* <Route path="/contact" component={Contact} /> */}
+      {/* Footer component here */}
     </StyledPage>
   </Router>
 );
