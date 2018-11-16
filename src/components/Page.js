@@ -4,18 +4,24 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-// import Header from './Header';
+import Nav from './Nav';
 
 const StyledPage = styled.div`
   background: white;
   color: black;
 `;
 
+const Home = () => <h2>This is the page content!</h2>
+
 const Page = () => (
   <Router>
     <StyledPage>
-      {/* <Header /> */}
-      This is the page content!
+      <Nav />
+      <Route path="/" exact component={Home} />
+      {/* <Route path="/about" component={About} /> */}
+      {/* <Route path="/portfolio" component={Portfolio} /> */}
+      {/* <Route path="/services" component={Services} /> */}
+      {/* <Route path="/contact" component={Contact} /> */}
     </StyledPage>
   </Router>
 );
