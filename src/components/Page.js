@@ -5,13 +5,12 @@ import {
   Route,
 } from 'react-router-dom';
 import Nav from './Nav';
+import Home from './Home';
 
 const StyledPage = styled.div`
   background: white;
   color: black;
 `;
-
-const Home = () => <h2>This is the page content!</h2>
 
 const Page = () => (
   <Router>
