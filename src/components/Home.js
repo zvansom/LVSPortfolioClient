@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 // Component imports
 import MainStyles from './styles/MainStyles';
@@ -12,7 +12,28 @@ import pencil from '../static/images/writing icon.png';
 import bullhorn from '../static/images/speaking icon.png';
 import profile from '../static/images/profile1.png';
 
-
+const ClientsStyles = styled.section`
+  background: var(--light-grey);
+  text-align: center;
+  h2 {
+    color: var(--green);
+    padding-top: 4rem;
+    text-transform: uppercase;
+  }
+  p {
+    margin: 1rem 0 4rem 0;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    padding-bottom: 5rem;
+  }
+  .image {
+    width: 150px;
+    height: 50px;
+  }
+`;
 
 const Home = () => (
   <>
@@ -41,6 +62,22 @@ const Home = () => (
         </div>
       </div>
     </SkillsStyles>
+    <ClientsStyles>
+      <div className="container">
+        <h2>Amazing clients</h2>
+        <p>I have written hundreds of articles for many clients over the years, including:</p>
+        <div className="images">
+          <img className="image" src="#" alt="Propser and Thrive" />
+          <img className="image" src="#" alt="Untamed Science" /> 
+          <img className="image" src="#" alt="Wise Bread" />
+          <img className="image" src="#" alt="Credit Karma" />
+          <img className="image" src="#" alt="Grow from acorns" />
+          <img className="image" src="#" alt="Society of Grownups" />
+          <img className="image" src="#" alt="Magnify Money" />
+          <img className="image" src="#" alt="Credit Seasame" />
+        </div>
+      </div>
+  </ClientsStyles>
   </>
 );
 
