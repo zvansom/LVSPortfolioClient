@@ -1,9 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import styled from 'styled-components';
+
 import MainStyles from './styles/MainStyles';
 
+import pencil from '../static/images/writing icon.png';
+import bullhorn from '../static/images/speaking icon.png';
 import profile from '../static/images/profile1.png';
+
+const SkillsSection = styled.section`
+  background: linear-gradient(45deg, #35B67C, #23BAC4);
+  color: white;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .skill {
+    margin: 8rem 0;
+    padding: 0 10rem;
+    text-align: center;
+    h2 {
+      margin-top: 2rem;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    p {
+      line-height: 1.5rem;
+    }
+  }
+  .skill:first-of-type {
+    border-right: 2px solid white;
+  }
+`;
 
 const Home = () => (
   <>
@@ -18,6 +47,20 @@ const Home = () => (
         <Link to="/contact" className="button">Contact me</Link>
       </div>
     </MainStyles>
+    <SkillsSection>
+      <div className="container">
+        <div className="skill">
+          <img src={pencil} alt="Pencil" />
+          <h2>Writing</h2>
+          <p>I can create written materials for online or print publication that spread the word about what</p>
+        </div>
+        <div className="skill">
+          <img src={bullhorn} alt="Bullhorn" />
+          <h2>Speaking</h2>
+          <p>I can create custom, live presentations to inform and entertain your group.</p>
+        </div>
+      </div>
+    </SkillsSection>
   </>
 );
 

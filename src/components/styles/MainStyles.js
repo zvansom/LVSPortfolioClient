@@ -7,9 +7,10 @@ const MainStyles = styled.main`
   grid-template-columns: 25% 50%;
   margin: 0 auto;
   padding: 8rem 6%;
+  padding-bottom: 4rem;
   gap: 6rem;
   background-image: url(${background});
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: #FAFAFC;
   background-position: right top;
