@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 // Component imports
 import MainStyles from './styles/MainStyles';
@@ -12,6 +12,30 @@ import ClientsStyles from './styles/ClientsStyles';
 import pencil from '../static/images/writing icon.png';
 import bullhorn from '../static/images/speaking icon.png';
 import profile from '../static/images/profile1.png';
+import testimonial1 from '../static/images/testimonial 1.png';
+import testimonial2 from '../static/images/testimonial 2.png';
+
+const TestimonialStyles = styled.section`
+  text-align: center;
+  h2 {
+    color: var(--green);
+    padding-top: 4rem;
+    text-transform: uppercase;
+  }
+  p {
+    margin: 1rem 0 4rem 0;
+  }
+  .testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .card {
+    padding: 6rem;
+    span {
+      font-weight: normal;
+    }
+  }
+`;
 
 const Home = () => (
   <>
@@ -56,6 +80,24 @@ const Home = () => (
         </div>
       </div>
   </ClientsStyles>
+    <TestimonialStyles>
+      <div className="container">
+        <h2>What clients say</h2>
+        <h3>Need proof? Here's what some of my clients have to say:</h3>
+        <div className="testimonials">
+          <div className="card">
+            <img src={testimonial1} alt="Lea Tirard-Hersant, The Staircase" />
+            <h4>Lea Tirard-Hersant<span>, The Staircase</span></h4>
+            <p>"I'm a French author and business owner, and I was looking for a professional writer to help us proofread and publish good content in English. You know, it takes time to find the right, reliable and talented person. I tried working with different copywriters... until I found Lindsay. Lindsay is the talented, professional, dynamic and reliable writer that we were looking for. We'll soon be celebrating a year of collaboration, and it's only the beginning!"</p>
+          </div>
+          <div className="card">
+            <img src={testimonial2} alt="Rob Nelson, Untamed Science" />
+            <h4>Rob Nelson<span>, Untamed Science</span></h4>
+            <p>"Lindsay is unique in the world of science and science writers I've worked with. Not only is she extremely knowledgable - although plenty of people that know their stuff - but she's willing to put in the work that is needed to get the job done. Sometimes that means learning new things. She brings the ultimate professionalism to the plate. If she says she's going to do something you can count on her word. I wish everyone I ever worked with was like Lindsay."</p>
+          </div>
+        </div>
+      </div>
+    </TestimonialStyles>
   </>
 );
 
