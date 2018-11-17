@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 const SkillsStyles = styled.section`
-  background: linear-gradient(45deg, #35B67C, #23BAC4);
+  background: linear-gradient(45deg, #3cb778, #1bb6c4);
   color: white;
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
   .skill {
-    margin: 8rem 0;
-    padding: 0 10rem;
+    margin: 10rem 0;
+    padding: 0 30%;
     text-align: center;
     h2 {
       margin-top: 2rem;

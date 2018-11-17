@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Nav from './Nav';
 import Home from './Home';
+import Footer from './Footer';
 
 const StyledPage = styled.div`
   background: white;
@@ -21,7 +22,7 @@ const Page = () => (
       {/* <Route path="/portfolio" component={Portfolio} /> */}
       {/* <Route path="/services" component={Services} /> */}
       {/* <Route path="/contact" component={Contact} /> */}
-      {/* Footer component here */}
+      <Footer />
     </StyledPage>
   </Router>
 );

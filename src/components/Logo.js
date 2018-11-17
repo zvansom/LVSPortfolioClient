@@ -7,6 +7,7 @@ const H1 = styled.h1`
   font-size: 5rem;
   line-height: 5rem;
   margin: 0;
+  font-weight: 300;
 `;
 
 const H2 = styled.h2`
