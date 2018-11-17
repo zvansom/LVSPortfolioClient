@@ -25,7 +25,7 @@ import creditSeasame from '../static/images/client-imgs/credit-sesame-companyupd
 
 const TestimonialStyles = styled.section`
   text-align: center;
-  padding: 7rem 0;
+  padding: 7rem 0 10rem;
   h2 {
     color: var(--green);
     text-transform: uppercase;
