@@ -36,10 +36,21 @@ const ContactMain = styled.main`
 `;
 
 class Contact extends React.Component {
+  state = {
+    firstname: '',
+    lastname: '',
+    email: '',
+    subject: '',
+    message: '',
+    sending: false,
+  }
+  
   handleSubmit = e => {
     e.preventDefault();
-    console.log(e)
+    this.setState({sending: true});
   }
+
+  handleChange = e => { this.setState({[e.target.name]: e.target.value}) }
   render() {
     return (
       <>
@@ -54,15 +65,24 @@ class Contact extends React.Component {
           </div>
         </GradientSection>
         <ContactMain className="container">
-          <p>Drop me a line below</p>
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" name="firstname" placeholder="First Name *" required />
-            <input type="text" name="lastname" placeholder="Last Name *" required />
-            <input type="text" name="subject" placeholder="Subject" />
-            <input type="email" name="email" placeholder="Email *" required />
-            <textarea rows="5" name="message" placeholder="Message"></textarea>
-            <button type="submit" className="button">Send</button>
-          </form>
+          {!this.state.sending && (
+            <>
+              <p>Drop me a line below</p>
+              <form onSubmit={this.handleSubmit}>
+                <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name *" required />
+                <input type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name *" required />
+                <input type="text" name="subject" value={this.state.subject} onChange={this.handleChange} placeholder="Subject" />
+                <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email *" required />
+                <textarea rows="5" name="message" value={this.state.message} onChange={this.handleChange} placeholder="Message"></textarea>
+                <button type="submit" className="button">Send</button>
+              </form>
+            </>
+          )}
+          {this.state.sending && (
+            <div>
+              Your message is being sent!
+            </div>
+          )}
         </ContactMain>
       </>
     );
