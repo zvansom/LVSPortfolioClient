@@ -11,9 +11,35 @@ const ContactMain = styled.main`
   p {
     text-align: center;
   }
+  form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-bottom: 10rem;
+    input, textarea {
+      font-size: 2rem;
+      padding: 1rem 0 1rem 2rem;
+    }
+    textarea {
+      grid-column: span 2;
+    }
+    button {
+      grid-column: -1 / 2;
+      margin: 0;
+      justify-self: end;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
 `;
 
 class Contact extends React.Component {
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(e)
+  }
   render() {
     return (
       <>
@@ -29,10 +55,13 @@ class Contact extends React.Component {
         </GradientSection>
         <ContactMain className="container">
           <p>Drop me a line below</p>
-          <form>
-            <label>
-              <input type="text" />
-            </label>
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" name="firstname" placeholder="First Name *" required />
+            <input type="text" name="lastname" placeholder="Last Name *" required />
+            <input type="text" name="subject" placeholder="Subject" />
+            <input type="email" name="email" placeholder="Email *" required />
+            <textarea rows="5" name="message" placeholder="Message"></textarea>
+            <button type="submit" className="button">Send</button>
           </form>
         </ContactMain>
       </>
