@@ -52,6 +52,10 @@ ul, li {
   list-style-position: inside;
   list-style: none;
 }
+p {
+  font-size: 2rem;
+  line-height: 2rem;
+}
 .container {
   max-width: 88%;
   margin: 0 auto;

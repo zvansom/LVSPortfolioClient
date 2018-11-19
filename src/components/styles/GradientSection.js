@@ -11,11 +11,22 @@ const GradientSection = styled.section`
   }
   h3 {
     font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  h3:last-of-type {
     margin-bottom: 4rem;
   }
   p {
-    font-size: 2rem;
-    line-height: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .social-media {
+    max-width: 250px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 2rem;
   }
 `;
 

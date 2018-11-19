@@ -8,6 +8,7 @@ import Nav from './Nav';
 import Home from './Home';
 import About from './About';
 import Services from './Services';
+import Contact from './Contact';
 import Footer from './Footer';
 
 const StyledPage = styled.div`
@@ -23,7 +24,7 @@ const Page = () => (
       <Route path="/about" component={About} />
       {/* <Route path="/portfolio" component={Portfolio} /> */}
       <Route path="/services" component={Services} />
-      {/* <Route path="/contact" component={Contact} /> */}
+      <Route path="/contact" component={Contact} />
       <Footer />
     </StyledPage>
   </Router>
