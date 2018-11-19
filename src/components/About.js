@@ -1,29 +1,70 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import styled from 'styled-components';
+
+import GradientSection from './styles/GradientSection';
+
 import profile from '../static/images/profile2.png';
 import facebook from '../static/images/facebook.png';
 import linkedin from '../static/images/linkedin.png';
 import twitter from '../static/images/twitter.png';
 
+const AboutMain = styled.main`
+  padding: 7rem 0 10rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6rem;
+  .image {
+    text-align: center;
+    .social-media {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  .about {
+    p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+    p:last-of-type {
+      margin: 4rem 0 6rem;
+    }
+    h2 {
+      color: var(--green);
+      text-transform: uppercase;
+      font-size: 4rem;
+    }
+    ul, li {
+      margin: 0;
+      padding: 0;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      list-style-position: inside;
+      list-style: none;
+    }
+  }
+`;
+
 const About = () => (
   <>
-    <section>
+    <GradientSection>
       <h2>Not your average writer</h2>
       <p>I've had a lot of unique and weird experiences in life.</p>
       <p>I've been in the National Spelling Bee, I've lived in Alaska for 10 years, and I've helped train an Iditarod dogsled team and raise a herd of caribou.</p>
-    </section>
-    <main>
+    </GradientSection>
+    <AboutMain className="container">
       <div className="image">
         <img src={profile} alt="Lindsay VanSomeren" />
         <div className="social-media">
           <a href="https://www.facebook.com/lindsay.vansomeren" target="_blank" rel="noopener noreferrer"><img src={facebook} alt="Lindsay VanSomeren Facebook" /></a>
           <a href="https://www.linkedin.com/in/lindsayvansomeren/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="Lindsay VanSomeren LinkedIn" /></a>
-          <a href="" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="Lindsay VanSomeren Twitter" /></a>
+          <a href="https://twitter.com/NotoriousDEBT" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="Lindsay VanSomeren Twitter" /></a>
         </div>
       </div>
       <div className="about">
-        <p>I've spent my whole life reading and writing, and I have two degrees in Wildlife <b>Biology and Conservation.</b></p>
+        <p>I've spent my whole life reading and writing, and I have two degrees in <b>Wildlife Biology and Conservation.</b></p>
 
         <p>These experiences have all resulted in my own particular lens in which I view life.
         <br />
@@ -48,7 +89,7 @@ const About = () => (
         <Link to="/portfolio" className="button">See full portfolio</Link>
         <Link to="/contact" className="button">Contact me</Link>
       </div>
-    </main>
+    </AboutMain>
   </>
 );
 

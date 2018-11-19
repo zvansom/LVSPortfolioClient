@@ -50,3 +50,12 @@ h6 {
   max-width: 88%;
   margin: 0 auto;
 }
+.button {
+  background: var(--green);
+  padding: 1.5rem 3rem;
+  color: white;
+  margin-top: 500px;
+  margin-right: 4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

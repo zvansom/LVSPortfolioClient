@@ -38,15 +38,6 @@ const MainStyles = styled.main`
   .highlight {
     color: var(--green);
   }
-  .button {
-    background: var(--green);
-    padding: 1.5rem 3rem;
-    color: white;
-    margin-top: 500px;
-    margin-right: 4rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
   @media (max-width: 1080px) {
     grid-template-columns: 1fr;
     img {
