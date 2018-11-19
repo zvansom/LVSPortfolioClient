@@ -10,6 +10,7 @@ import twitter from '../static/images/twitter.png';
 const ContactMain = styled.main`
   p {
     text-align: center;
+    margin: 6rem 0;
   }
   form {
     max-width: 800px;
