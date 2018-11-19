@@ -37,12 +37,8 @@ const AboutMain = styled.main`
       font-size: 4rem;
     }
     ul, li {
-      margin: 0;
-      padding: 0;
       font-size: 2rem;
       line-height: 2.5rem;
-      list-style-position: inside;
-      list-style: none;
     }
   }
 `;

@@ -7,6 +7,44 @@ import GradientSection from './styles/GradientSection';
 import pencilGreen from '../static/images/writing icon green.png';
 import bullhornGreen from '../static/images/speaking icon green.png';
 
+const ServicesMain = styled.main`
+  padding: 7rem 0 10rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 6rem;
+  img{
+    vertical-align: middle;
+  }
+  h3 {
+    display: inline;
+    font-size: 3rem;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-left: 6rem;
+  }
+  p, ul {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  li {
+    line-height: 4rem;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 4rem 0;
+  }
+  li:nth-of-type(3n+2) {
+    text-align: center;
+    border-left: 2px solid var(--green);
+    border-right: 2px solid var(--green);
+  }
+  li:nth-of-type(3n+3) {
+    padding-left: 3rem;
+  }
+`;
+
 const Services = () => (
   <>
     <GradientSection>
@@ -15,7 +53,7 @@ const Services = () => (
       <Link to="/portfolio" className="button">See full portfolio</Link>
       <Link to="/contact" className="button">Contact me</Link>
     </GradientSection>
-    <main className="container">
+    <ServicesMain className="container">
       <div className="writing">
         <img src={pencilGreen} alt="Writing" />
         <h3>Writing</h3>
@@ -37,7 +75,7 @@ const Services = () => (
         <h3>Speaking</h3>
         <p>I've been a Toastmaster for two years. That means I'm able to deliver your message clearly and effectively to your group.</p>
       </div>
-    </main>
+    </ServicesMain>
   </>
 );
 
