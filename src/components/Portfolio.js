@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import GradientSection from './styles/GradientSection';
 
+import Carousel from './Carousel';
+
 const PortfolioMain = styled.main`
   padding: 6rem 0;
   h3 {
@@ -26,6 +28,7 @@ const Portfolio = () => (
         <h3>Personal finance articles</h3>
         <p>Here are some of my personal finance articles.</p>
         <p>I can write light, fun, educational pieces as well as in-depth guides to financial products:</p>
+        <Carousel />
         {/* Carousel here */}
       </div>
       <div>
