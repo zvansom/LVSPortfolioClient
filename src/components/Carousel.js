@@ -1,4 +1,5 @@
 import React from 'react';
+import Slider from 'react-slick';
 
 import styled from 'styled-components';
 
@@ -12,62 +13,58 @@ import img7 from '../static/images/carousel/7.jpg';
 import img8 from '../static/images/carousel/8.jpg';
 import img9 from '../static/images/carousel/9.jpg';
 
-const CarouselContainer = styled.div`
-  text-align: center;
-  .lower {
-    display: flex;
-    justify-content: space-around;
-    position: relative;
-    img {
-      transform: scale(0.5);
-      
-    }
-  }
-  .top {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    img {
-      transform: scale(1);
-    }
+const Slide = styled.div`
+  p {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: white;
   }
 `;
 
 class Carousel extends React.Component {
-  state = {
-    index: 0,
-    images: [img1, img2, img3, img4, img5, img6, img7, img8, img9]
-  }
-
-  handleLeft = () => {
-    const index = this.state.index - 1;
-    this.setState({
-      index,
-    });
-  }
-
-  handleRight = () => {
-    const index = this.state.index + 1;
-    this.setState({
-      index,
-    });
-  }
-
   render() {
-    const prev = this.state.index === 0 ? 8 : this.state.index - 1;
-    const next = this.state.index === 8 ? 0 : this.state.index + 1;
+    const settings = {
+      centerMode: true,
+      infinite: true,
+      slidesToShow: 3,
+      speed: 500,
+      autoplay: false,
+      dots: true,
+    };
     return (
-      <CarouselContainer>
-        <div className="lower">
-          <img src={this.state.images[prev]} />
-          <div className="top">
-            <img src={this.state.images[this.state.index]} alt="image" />
-          </div>
-          <img src={this.state.images[next]} />
-        </div>
-        <button disabled={this.state.index <= 0} onClick={this.handleLeft}>⬅️</button>
-        <button disabled={this.state.index >= 8} onClick={this.handleRight}>➡️</button>
-      </CarouselContainer>
+      <>
+        <Slider {...settings}>
+          <Slide>
+            <p style={{ backgroundImage: `url(${img1})` }}>
+              words words words
+            </p>
+          </Slide>
+          <Slide>
+            <img src={img1} />
+          </Slide>
+          <Slide>
+            <img src={img3} />
+          </Slide>
+          <Slide>
+            <img src={img4} />
+          </Slide>
+          <Slide>
+            <img src={img5} />
+          </Slide>
+          <Slide>
+            <img src={img6} />
+          </Slide>
+          <Slide>
+            <img src={img7} />
+          </Slide>
+          <Slide>
+            <img src={img8} />
+          </Slide>
+          <Slide>
+            <img src={img9} />
+          </Slide>
+        </Slider>
+      </>
     );
   }
 }

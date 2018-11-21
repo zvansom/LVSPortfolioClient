@@ -29,7 +29,6 @@ const Portfolio = () => (
         <p>Here are some of my personal finance articles.</p>
         <p>I can write light, fun, educational pieces as well as in-depth guides to financial products:</p>
         <Carousel />
-        {/* Carousel here */}
       </div>
       <div>
         <h3>Science articles</h3>

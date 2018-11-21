@@ -1,3 +1,5 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 :root {
   --green: #499970;
   --green-bright: #3cb878;
@@ -68,4 +70,10 @@ p {
   margin-right: 4rem;
   font-weight: 600;
   letter-spacing: 1px;
+}
+.slick-arrow {
+  background: black;
+}
+.slick-center {
+  transform: scale(1.5);
 }
