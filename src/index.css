@@ -71,9 +71,31 @@ p {
   font-weight: 600;
   letter-spacing: 1px;
 }
-.slick-arrow {
-  background: black;
+.slick-slider {
+  margin: 8rem 0;
 }
-.slick-center {
-  transform: scale(1.5);
+.slick-slide > div > div > img {
+  max-width: 100%;
+  height: auto;
+}
+.slick-slide > div > div > img {
+  transition: all 0.5s ease;
+  transform: scale(0.8);
+  opacity: 0.4;
+}
+.slick-current {
+  background: white;
+  text-align: center;
+}
+.slick-current > div > div > img {
+  opacity: 1;
+  transform: scale(1.4);
+  transform: translateY(-0.5rem);
+  margin: 0 auto;
+}
+.slick-slide > div > div > p {
+  display: none;
+}
+.slick-center > div > div > p {
+  display: block;
 }
