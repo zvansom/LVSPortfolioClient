@@ -21,12 +21,18 @@ const NavStyles = styled.nav`
     color: var(--green-bright);
     font-weight: 900;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1080px) {
     flex-direction: column;
     ul {
       padding: 0;
-      display: flex;
-
+      display: block;
+      margin: 2rem 0;
+    }
+  }
+  @media (max-width: 600px) {
+    text-align: center;
+    .nav-link {
+      padding: 1rem 1.2rem;
     }
   }
 `;
