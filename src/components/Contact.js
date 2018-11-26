@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 
 import GradientSection from './styles/GradientSection';
@@ -46,8 +47,12 @@ class Contact extends React.Component {
     sending: false,
   }
   
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
+    const {sending, ...data} = this.state;
+    console.log(data);
+    const res = await axios.post('http://localhost:7777/test', data);
+    console.log(res);
     this.setState({sending: true});
   }
 
@@ -70,10 +75,10 @@ class Contact extends React.Component {
             <>
               <p>Drop me a line below</p>
               <form onSubmit={this.handleSubmit}>
-                <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name *" required />
-                <input type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name *" required />
+                <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name *"  />
+                <input type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name *"  />
                 <input type="text" name="subject" value={this.state.subject} onChange={this.handleChange} placeholder="Subject" />
-                <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email *" required />
+                <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email *"  />
                 <textarea rows="5" name="message" value={this.state.message} onChange={this.handleChange} placeholder="Message"></textarea>
                 <button type="submit" className="button">Send</button>
               </form>
