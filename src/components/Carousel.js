@@ -47,7 +47,7 @@ class Carousel extends React.Component {
     };
     return (
       <CarouselStyle>
-        <button className="button carousel-button" onClick={this.previous}>⬅️ Prev</button>
+        <button className="button carousel-button" onClick={this.previous}>⬅️</button>
         <Slider ref={c => (this.slider = c)} {...settings}>
           <div key={1}>
             <img src={img1} />
@@ -86,7 +86,7 @@ class Carousel extends React.Component {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor leo a diam sollicitudin. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Risus ultricies tristique nulla aliquet enim.</p>
           </div>
         </Slider>
-        <button className="button carousel-button" onClick={this.next}>Next ➡️</button>        
+        <button className="button carousel-button" onClick={this.next}>➡️</button>        
       </CarouselStyle>
     );
   }
