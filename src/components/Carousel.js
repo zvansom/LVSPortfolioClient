@@ -1,6 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 
+import styled from 'styled-components';
+
 import img1 from '../static/images/carousel/1.jpg';
 import img2 from '../static/images/carousel/2.jpg';
 import img3 from '../static/images/carousel/3.jpg';
@@ -11,7 +13,16 @@ import img7 from '../static/images/carousel/7.jpg';
 import img8 from '../static/images/carousel/8.jpg';
 import img9 from '../static/images/carousel/9.jpg';
 
+const CarouselStyle = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 80% 1fr;
+`;
+
 class Carousel extends React.Component {
+  next = () => { this.slider.slickNext(); }
+
+  previous = () => { this.slider.slickPrev(); }
+  
   render() {
     const settings = {
       dots: true,
@@ -35,46 +46,48 @@ class Carousel extends React.Component {
       ],
     };
     return (
-      <>
-        <Slider {...settings}>
-          <div>
+      <CarouselStyle>
+        <button className="button carousel-button" onClick={this.previous}>⬅️ Prev</button>
+        <Slider ref={c => (this.slider = c)} {...settings}>
+          <div key={1}>
             <img src={img1} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae turpis massa sed elementum tempus egestas sed. Odio aenean sed adipiscing diam donec adipiscing tristique. Donec adipiscing tristique risus nec feugiat.</p>
           </div>
-          <div>
+          <div key={2}>
             <img src={img2} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc. Duis at consectetur lorem donec massa. Consequat nisl vel pretium lectus quam id leo.</p>
           </div>
-          <div>
+          <div key={3}>
             <img src={img3} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor leo a diam sollicitudin. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Risus ultricies tristique nulla aliquet enim.</p>
           </div>
-          <div>
+          <div key={4}>
             <img src={img4} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc. Duis at consectetur lorem donec massa. Consequat nisl vel pretium lectus quam id leo.</p>
           </div>
-          <div>
+          <div key={5}>
             <img src={img5} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor leo a diam sollicitudin. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Risus ultricies tristique nulla aliquet enim.</p>
           </div>
-          <div>
+          <div key={6}>
             <img src={img6} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc. Duis at consectetur lorem donec massa. Consequat nisl vel pretium lectus quam id leo.</p>
           </div>
-          <div>
+          <div key={7}>
             <img src={img7} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor leo a diam sollicitudin. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Risus ultricies tristique nulla aliquet enim.</p>
           </div>
-          <div>
+          <div key={8}>
             <img src={img8} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc. Duis at consectetur lorem donec massa. Consequat nisl vel pretium lectus quam id leo.</p>
           </div>
-          <div>
+          <div key={9}>
             <img src={img9} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor leo a diam sollicitudin. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Risus ultricies tristique nulla aliquet enim.</p>
           </div>
         </Slider>
-      </>
+        <button className="button carousel-button" onClick={this.next}>Next ➡️</button>        
+      </CarouselStyle>
     );
   }
 }

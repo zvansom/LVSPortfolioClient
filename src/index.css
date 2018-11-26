@@ -99,3 +99,6 @@ p {
 .slick-center > div > div > p {
   display: block;
 }
+.carousel-button {
+  margin: 0 auto;
+}
