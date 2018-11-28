@@ -102,3 +102,11 @@ p {
 .carousel-button {
   margin: 0 auto;
 }
+.hover:hover {
+  transform: scale(1.2);
+}
+.hover:active {
+  transform: scale(0.9);
+  border: 2px solid #ffffff88;
+  border-radius: 2px 2px 2px 2px;
+}

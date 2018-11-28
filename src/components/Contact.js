@@ -13,6 +13,9 @@ const ContactMain = styled.main`
     text-align: center;
     margin: 6rem 0;
   }
+  img {
+    transition: scale 0.4s ease;
+  }
   form {
     max-width: 800px;
     margin: 0 auto;
@@ -50,10 +53,11 @@ class Contact extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
     const {sending, ...data} = this.state;
-    console.log(data);
-    const res = await axios.post('http://localhost:7777/test', data);
-    console.log(res);
-    this.setState({sending: true});
+    console.log('data', data);
+    const res = await axios.post('http://localhost:7777/test', data)
+      .catch(err => { console.error(err); });
+    console.log('res', res);
+    // this.setState({sending: true});
   }
 
   handleChange = e => { this.setState({[e.target.name]: e.target.value}) }
@@ -65,9 +69,9 @@ class Contact extends React.Component {
           <h3>Ready for a quick, no-obligation quote?</h3>
           <h3>Find me on:</h3>
           <div className="social-media">
-            <a href="https://www.facebook.com/lindsay.vansomeren" target="_blank" rel="noopener noreferrer"><img src={facebook} alt="Lindsay VanSomeren Facebook" /></a>
-            <a href="https://www.linkedin.com/in/lindsayvansomeren/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="Lindsay VanSomeren LinkedIn" /></a>
-            <a href="https://twitter.com/NotoriousDEBT" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="Lindsay VanSomeren Twitter" /></a>
+            <a href="https://www.facebook.com/lindsay.vansomeren" target="_blank" rel="noopener noreferrer"><img src={facebook} alt="Lindsay VanSomeren Facebook" className="hover" /></a>
+            <a href="https://www.linkedin.com/in/lindsayvansomeren/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="Lindsay VanSomeren LinkedIn" className="hover" /></a>
+            <a href="https://twitter.com/NotoriousDEBT" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="Lindsay VanSomeren Twitter" className="hover" /></a>
           </div>
         </GradientSection>
         <ContactMain className="container">
