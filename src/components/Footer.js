@@ -13,10 +13,12 @@ const FooterStyles = styled.footer`
   }
 `;
 
-const Footer = () => (
+const Footer = () => {
+  const year = new Date().getFullYear();
+  return (
   <FooterStyles>
-    <p>💩 Copywrites Reserved</p>
+    <p>© Lindsay VanSomeren {year}</p>
   </FooterStyles>
-);
+)};
 
 export default Footer;
