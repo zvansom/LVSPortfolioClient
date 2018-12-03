@@ -16,10 +16,15 @@ const NavStyles = styled.nav`
     color: var(--logo-grey);
     font-size: 2rem;
     padding: 1rem 3rem;
+    transition: all 0.1s ease;
+  }
+  .nav-link:hover {
+    font-size: 2.1rem;
   }
   .active-page {
     color: var(--green-bright);
     font-weight: 900;
+    border-bottom: solid 1px var(--green-bright);
   }
   @media (max-width: 1080px) {
     flex-direction: column;
@@ -33,6 +38,7 @@ const NavStyles = styled.nav`
     text-align: center;
     .nav-link {
       padding: 1rem 1.2rem;
+      font-size: 1.8rem;
     }
   }
 `;
