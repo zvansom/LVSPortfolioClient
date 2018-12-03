@@ -26,6 +26,19 @@ const ClientsStyles = styled.section`
   .image {
     max-width: 100%;
   }
+  @media (max-width: 900px) {
+    .images {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .image {
+      justify-self: center;
+    }
+  }
+  @media (max-width: 500px) {
+    .images {
+      grid-template-columns: 1fr;
+    }
+  }
 `;
 
 export default ClientsStyles;

@@ -12,10 +12,10 @@ const MainStyles = styled.main`
   background-image: url(${background});
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #FAFAFC;
-  background-position: right;
+  background-color: #F6f7f8;
+  background-position: right top;
   img {
-    max-width: 375px;
+    max-width: 100%;
   }
   h2 {
     text-transform: uppercase;
@@ -40,16 +40,19 @@ const MainStyles = styled.main`
   }
   @media (max-width: 1080px) {
     grid-template-columns: 1fr;
+    padding: 4rem;
+    gap: 2rem;
+    background-size: contain;
     img {
-      display: none;
+      justify-self: center;
     }
     .message {
+      justify-self: center;
       padding: 6rem;
       max-width: 75%;
     }
   }
   @media (max-width: 760px) {
-    background-image: none;
     .message {
       padding: 0;
       margin: 0 auto;
@@ -59,6 +62,7 @@ const MainStyles = styled.main`
     }
   }
   @media (max-width: 480px) {
+    background-image: none;
     .button {
       text-align: center;
       display: block;

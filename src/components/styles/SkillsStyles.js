@@ -6,10 +6,10 @@ const SkillsStyles = styled.section`
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 10rem;
   }
   .skill {
-    margin: 10rem 0;
-    padding: 0 30%;
+    padding: 5rem 30%;
     text-align: center;
     h2 {
       margin-top: 2rem;
@@ -22,6 +22,22 @@ const SkillsStyles = styled.section`
   }
   .skill:first-of-type {
     border-right: 2px solid white;
+  }
+  @media (max-width: 900px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+    .skill:first-of-type {
+      border-right: none;
+    }
+    .skill:last-of-type {
+      border-top: 2px solid white;
+    }
+  }
+  @media (max-width: 500px) {
+    .container {
+      padding: 0;
+    }
   }
 `;
 

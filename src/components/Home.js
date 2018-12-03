@@ -58,6 +58,11 @@ const TestimonialStyles = styled.section`
       line-height: 2rem;
     }
   }
+  @media (max-width: 500px) {
+    .testimonials {
+      grid-template-columns: 1fr;
+    }
+  }
 `;
 
 const Home = () => (
