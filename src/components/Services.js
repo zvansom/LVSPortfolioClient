@@ -43,6 +43,9 @@ const ServicesMain = styled.main`
   li:nth-of-type(3n+3) {
     padding-left: 3rem;
   }
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Services = () => (

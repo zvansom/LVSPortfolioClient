@@ -8,10 +8,15 @@ const GradientSection = styled.section`
   h2 {
     text-transform: uppercase;
     font-size: 4rem;
+    line-height: 4rem;
+    
   }
   h3 {
     font-size: 3rem;
     line-height: 3.5rem;
+  }
+  h3:first-of-type {
+    margin-top: 4rem;
   }
   h3:last-of-type {
     margin-bottom: 4rem;
@@ -27,6 +32,12 @@ const GradientSection = styled.section`
     justify-content: space-around;
     margin: 0 auto;
     margin-top: 2rem;
+  }
+  @media (max-width: 600px) {
+    padding: 10rem 0;
+    a {
+      margin-left: 1rem;
+    }
   }
 `;
 
