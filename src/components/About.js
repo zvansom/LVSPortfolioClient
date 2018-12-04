@@ -41,6 +41,14 @@ const AboutMain = styled.main`
       line-height: 2.5rem;
     }
   }
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    .image {
+      order: 1;
+      margin-top: 5rem;
+    }
+  }
 `;
 
 const About = () => (
