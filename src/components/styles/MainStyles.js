@@ -39,17 +39,14 @@ const MainStyles = styled.main`
     color: var(--green);
   }
   @media (max-width: 1080px) {
-    grid-template-columns: 1fr;
     padding: 4rem;
-    gap: 2rem;
+    gap: 4rem;
     background-size: contain;
     img {
       justify-self: center;
     }
     .message {
       justify-self: center;
-      padding: 6rem;
-      max-width: 75%;
     }
   }
   @media (max-width: 760px) {

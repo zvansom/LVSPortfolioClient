@@ -9,7 +9,7 @@ const SkillsStyles = styled.section`
     padding: 10rem;
   }
   .skill {
-    padding: 5rem 30%;
+    padding: 5rem;
     text-align: center;
     h2 {
       margin-top: 2rem;
