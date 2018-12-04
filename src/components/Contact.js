@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { 
+  CSSTransition,
+} from 'react-transition-group';
 
 import GradientSection from './styles/GradientSection';
 
@@ -9,6 +12,7 @@ import linkedin from '../static/images/linkedin.png';
 import twitter from '../static/images/twitter.png';
 
 const ContactMain = styled.main`
+  position: relative;
   p {
     text-align: center;
     margin: 6rem 0;
@@ -61,9 +65,9 @@ class Contact extends React.Component {
   
   handleSubmit = async e => {
     e.preventDefault();
-    // const {sending, ...data} = this.state;
-    // const res = await axios.post('http://localhost:7777/test', data)
-      // .catch(err => { console.error(err); });
+    const {sending, ...data} = this.state;
+    const res = await axios.post('http://localhost:7777/test', data)
+      .catch(err => { console.error(err); });
     this.setState({sending: true});
   }
 
@@ -82,24 +86,20 @@ class Contact extends React.Component {
           </div>
         </GradientSection>
         <ContactMain className="container">
-          {!this.state.sending && (
-            <>
-              <p>Drop me a line below</p>
-              <form onSubmit={this.handleSubmit}>
-                <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name *" required />
-                <input type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name *" required />
-                <input type="text" name="subject" value={this.state.subject} onChange={this.handleChange} placeholder="Subject" />
-                <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email *" required />
-                <textarea rows="5" name="message" value={this.state.message} onChange={this.handleChange} placeholder="Message"></textarea>
-                <button type="submit" className="button">Send</button>
-              </form>
-            </>
-          )}
-          {this.state.sending && (
-            <div className="container">
-              Your message is being sent!
-            </div>
-          )}
+          <p>Drop me a line below</p>
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name *" />
+            <input type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name *" />
+            <input type="text" name="subject" value={this.state.subject} onChange={this.handleChange} placeholder="Subject" />
+            <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email *" />
+            <textarea rows="5" name="message" value={this.state.message} onChange={this.handleChange} placeholder="Message"></textarea>
+            <button type="submit" className="button">Send</button>
+          </form>
+          <div className={this.state.sending ? 'container message-sent slide' : 'container message-sent'}>
+            <h2>Your message has been sent!</h2>
+            <p>Thanks for reaching out. I'll get back to you at the email address you provided as soon as I'm able.</p>
+            <p>Talk to you soon!</p>
+          </div>
         </ContactMain>
       </>
     );
