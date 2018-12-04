@@ -38,6 +38,15 @@ const ContactMain = styled.main`
       padding-right: 5rem;
     }
   }
+  @media (max-width: 600px) {
+    form {
+      display: flex;
+      flex-direction: column;
+      input, textarea {
+        margin: 0 0 4rem 0;
+      }
+    }
+  }
 `;
 
 class Contact extends React.Component {
@@ -52,12 +61,10 @@ class Contact extends React.Component {
   
   handleSubmit = async e => {
     e.preventDefault();
-    const {sending, ...data} = this.state;
-    console.log('data', data);
-    const res = await axios.post('http://localhost:7777/test', data)
-      .catch(err => { console.error(err); });
-    console.log('res', res);
-    // this.setState({sending: true});
+    // const {sending, ...data} = this.state;
+    // const res = await axios.post('http://localhost:7777/test', data)
+      // .catch(err => { console.error(err); });
+    this.setState({sending: true});
   }
 
   handleChange = e => { this.setState({[e.target.name]: e.target.value}) }
@@ -79,17 +86,17 @@ class Contact extends React.Component {
             <>
               <p>Drop me a line below</p>
               <form onSubmit={this.handleSubmit}>
-                <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name *"  />
-                <input type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name *"  />
+                <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name *" required />
+                <input type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name *" required />
                 <input type="text" name="subject" value={this.state.subject} onChange={this.handleChange} placeholder="Subject" />
-                <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email *"  />
+                <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email *" required />
                 <textarea rows="5" name="message" value={this.state.message} onChange={this.handleChange} placeholder="Message"></textarea>
                 <button type="submit" className="button">Send</button>
               </form>
             </>
           )}
           {this.state.sending && (
-            <div>
+            <div className="container">
               Your message is being sent!
             </div>
           )}
