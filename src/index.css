@@ -97,9 +97,11 @@ p {
   transform: translateY(-0.5rem);
   margin: 0 auto;
 }
+.slick-slide > div > div > h3,
 .slick-slide > div > div > p {
   display: none;
 }
+.slick-center > div > div > h3,
 .slick-center > div > div > p {
   display: block;
 }

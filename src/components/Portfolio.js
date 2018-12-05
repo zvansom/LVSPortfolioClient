@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { financial } from '../static/articles';
+
 import GradientSection from './styles/GradientSection';
 
 import Carousel from './Carousel';
@@ -30,7 +32,7 @@ const Portfolio = () => (
         <h3>Personal finance articles</h3>
         <p>Here are some of my personal finance articles.</p>
         <p>I can write light, fun, educational pieces as well as in-depth guides to financial products:</p>
-        <Carousel />
+        <Carousel articles={financial} />
       </div>
       <div className="section">
         <h3>Science articles</h3>

@@ -1,9 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { 
-  CSSTransition,
-} from 'react-transition-group';
 
 import GradientSection from './styles/GradientSection';
 
