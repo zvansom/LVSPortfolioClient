@@ -1,8 +1,13 @@
 // Import financial section images
-import centsai from '../static/images/carousel/travel/centsai.jpg';
-import chime from '../static/images/carousel/travel/chime.jpg';
-import creditSeasame from '../static/images/carousel/travel/credit-seasame.jpg';
-import magnifyMoney from '../static/images/carousel/travel/magnify.jpg';
+import centsai from '../static/images/carousel/financial/centsai.jpg';
+import chime from '../static/images/carousel/financial/chime.jpg';
+import creditSeasame from '../static/images/carousel/financial/credit-seasame.jpg';
+import magnifyMoney from '../static/images/carousel/financial/magnify.jpg';
+import superMoney from '../static/images/carousel/financial/supermoney.jpg';
+import creditKarma from '../static/images/carousel/financial/credit-karma.jpg';
+
+// Import science section images
+import untamed from '../static/images/carousel/science/untamed.jpg';
 
 // Import travel section images
 import farAndWide from '../static/images/carousel/travel/farandwide.jpg';
@@ -31,11 +36,28 @@ const financial = [
      url: 'https://www.magnifymoney.com/blog/strategies-to-save/ultimate-guide-cd-ladders/',
      quote: `Certificate of Deposits (CDs) are some of the highest-yielding deposit accounts offered at most banks and credit unions. But, they come with a catch: your money is locked away for a certain period of time, and generally you can’t unlock it without paying an early withdrawal penalty.  It’s also no secret that interest rates are changing these days. That can also affect the returns you get from saving with CDs.Things only get more complex if you’re attempting to create what is called a CD Ladder, which can be used to take advantage of higher APYs while staggering investments so all your cash isn’t tied up for a very long time.`,
      img: magnifyMoney,
+   },
+   {
+     title: 'Is It a Good Idea to Convert Your Term Life Insurance to Whole Life Insurance?',
+     url: 'https://www.supermoney.com/2017/05/good-idea-convert-term-life-insurance-whole-life-insurance/',
+     quote: `If you’ve bought term life insurance, congratulations! You’ve taken an important step in protecting your loved ones from financial hardship. When your term is nearing completion, you might start receiving letters from your insurance company touting the benefits of converting your term policy to a whole life policy. They’ll make it sound as if it’s the best thing since sliced bread with raisins. But is that really the best decision in your situation? Here’s some information for you to consider and make a good choice for you and your family.`,
+     img: superMoney,
+   },
+   {
+     title: 'How to maximize your Delta Reserve® Credit Card from American Express benefits',
+     url: 'https://www.creditkarma.com/credit-cards/i/delta-reserve-credit-card-benefits/',
+     quote: `The Delta Reserve® Credit Card can be a bit of a gamble in how much value you get for the price. We’ll show you which benefits you can get with this card and how to use them so you can come out ahead. Let’s start with the sign-up bonus. If you spend $3,000 on purchases during the first three months after opening the Delta Reserve Credit Card, you’ll earn 40,000 bonus miles.`,
+     img: creditKarma,
    }
 ];
 
 const science = [
-  { }
+  { 
+    title: 'Where did the Zika Virus come from?',
+    url: 'http://www.untamedscience.com/biodiversity/zika-virus/',
+    quote: `Deep in an African jungle, a monkey sits high in the canopy of a lush forest. This is a special monkey; he is called Rhesus 766. Every so often, people come to visit him. They give him food and water, clean his aerial pen, and check that he is healthy. One day, Rhesus 766 comes down with a fever. His visitors, concerned, bring him back to a building near the forest to run some tests. What they find is striking; a brand new, unknown virus is causing Rhesus 766’s symptoms.`,
+    img: untamed,
+  }
 ];
 
 const travel = [

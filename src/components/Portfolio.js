@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { financial } from '../static/articles';
+import { financial, science, travel } from '../static/articles';
 
 import GradientSection from './styles/GradientSection';
 
@@ -36,11 +36,11 @@ const Portfolio = () => (
       </div>
       <div className="section">
         <h3>Science articles</h3>
-        <Carousel />
+        <Carousel articles={science} />
       </div>
       <div className="section">
         <h3>Travel articles</h3>
-        <Carousel />
+        <Carousel articles={travel} />
       </div>
     </PortfolioMain>
   </>
