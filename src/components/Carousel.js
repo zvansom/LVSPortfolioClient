@@ -27,7 +27,7 @@ class Carousel extends React.Component {
       adaptiveHeight: false,
       responsive: [
         {
-          breakpoint: 600,
+          breakpoint: 800,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -43,11 +43,12 @@ class Carousel extends React.Component {
           {articles && (
             articles.map((article, idx) => {
               const { img, title, url, quote } = article;
+              const summary = quote.split(' ').splice(0, 20).join(' ');
               return (
                 <div className="card" key={idx}>
                   <img src={img} alt={title} />
                   <h3><a href={url} target="_blank" rel="noopener noreferrer">{title}</a></h3>
-                  <p>{quote}</p>
+                  <p>{summary}...</p>
                 </div>
               ); 
             })

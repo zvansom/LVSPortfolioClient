@@ -84,7 +84,7 @@ p {
 }
 .slick-slide > div > div > img {
   transition: all 0.5s ease;
-  transform: scale(0.8);
+  transform: scale(0.6);
   opacity: 0.4;
 }
 .slick-current {
@@ -101,12 +101,22 @@ p {
 .slick-slide > div > div > p {
   display: none;
 }
-.slick-center > div > div > h3,
-.slick-center > div > div > p {
+.card > p {
+  text-align: left;
+}
+.card > h3 {
+  line-height: 3rem;
+}
+.card a:hover {
+  color: var(--green);
+}
+.slick-center > div > .card > h3,
+.slick-center > div > .card > p {
   display: block;
 }
 .carousel-button {
   margin: 0 auto;
+  font-size: 4rem;
 }
 .hover:hover {
   transform: scale(1.2);
