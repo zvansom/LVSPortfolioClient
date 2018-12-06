@@ -116,7 +116,6 @@ p {
 }
 .carousel-button {
   margin: 0 auto;
-  font-size: 4rem;
 }
 .hover:hover {
   transform: scale(1.2);
@@ -146,4 +145,11 @@ p {
 .slide {
   opacity: 1;
   transform: translateX(5%);
+}
+.arrow-prev {
+  width: 0;
+  height: 0;
+  border-top: 4rem solid transparent;
+  border-bottom: 4rem solid transparent;
+  border-left: 4rem solid var(--logo-gray);
 }

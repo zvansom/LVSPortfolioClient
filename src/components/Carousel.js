@@ -9,6 +9,20 @@ const CarouselStyle = styled.div`
   @media (max-width: 800px) {
     display: block;
   }
+  .arrow-prev {
+    width: 0;
+    height: 0;
+    border-top: 4rem solid transparent;
+    border-bottom: 4rem solid transparent;
+    border-right: 4rem solid rgb(0,0,0,0.4);
+  }
+  .arrow-next {
+    width: 0;
+    height: 0;
+    border-top: 4rem solid transparent;
+    border-bottom: 4rem solid transparent;
+    border-left: 4rem solid rgb(0,0,0,0.4);
+  }
 `;
 
 class Carousel extends React.Component {
@@ -62,7 +76,7 @@ class Carousel extends React.Component {
     return (
       <CarouselStyle>
         { isDesktop && (
-        <button className="button carousel-button" onClick={this.previous}><span role="img" aria-label="previous">⬅️</span></button>
+        <button className="button carousel-button" onClick={this.previous}><div className="arrow-prev" aria-label="previous"></div></button>
         )}
         <Slider ref={c => (this.slider = c)} {...settings}>
           {articles && (
@@ -80,7 +94,7 @@ class Carousel extends React.Component {
           )}
         </Slider>
         { isDesktop && (
-          <button className="button carousel-button" onClick={this.next}><span role="img" aria-label="next">➡️</span></button>        
+          <button className="button carousel-button" onClick={this.next}><div className="arrow arrow-next" aria-label="next"></div></button>        
         )}
       </CarouselStyle>
     );
