@@ -6,9 +6,31 @@ import styled from 'styled-components';
 const CarouselStyle = styled.div`
   display: grid;
   grid-template-columns: 1fr 80% 1fr;
+  @media (max-width: 800px) {
+    display: block;
+  }
 `;
 
 class Carousel extends React.Component {
+  state = {
+    isDesktop: false,
+  };
+
+  componentDidMount() {
+    this.checkWidth();
+    window.addEventListener("resize", this.checkWidth);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.checkWidth);
+  }
+
+  checkWidth = () => {
+    console.log('width changing');
+    console.log(this);
+    this.setState({ isDesktop: window.innerWidth > 800 });
+  }
+
   next = () => { this.slider.slickNext(); }
 
   previous = () => { this.slider.slickPrev(); }
@@ -36,9 +58,12 @@ class Carousel extends React.Component {
       ],
     };
     const { articles } = this.props;
+    const { isDesktop } = this.state;
     return (
       <CarouselStyle>
+        { isDesktop && (
         <button className="button carousel-button" onClick={this.previous}><span role="img" aria-label="previous">⬅️</span></button>
+        )}
         <Slider ref={c => (this.slider = c)} {...settings}>
           {articles && (
             articles.map((article, idx) => {
@@ -54,7 +79,9 @@ class Carousel extends React.Component {
             })
           )}
         </Slider>
-        <button className="button carousel-button" onClick={this.next}><span role="img" aria-label="next">➡️</span></button>        
+        { isDesktop && (
+          <button className="button carousel-button" onClick={this.next}><span role="img" aria-label="next">➡️</span></button>        
+        )}
       </CarouselStyle>
     );
   }
