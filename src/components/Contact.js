@@ -63,8 +63,8 @@ class Contact extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
     const {sending, ...data} = this.state;
-    const res = await axios.post('http://localhost:7777/test', data)
-      .catch(err => { console.error(err); });
+    // const res = await axios.post('http://localhost:7777/test', data)
+    //   .catch(err => { console.error(err); });
     this.setState({sending: true});
   }
 
@@ -79,7 +79,7 @@ class Contact extends React.Component {
           <div className="social-media">
             <a href="https://www.facebook.com/lindsay.vansomeren" target="_blank" rel="noopener noreferrer"><img src={facebook} alt="Lindsay VanSomeren Facebook" className="hover" /></a>
             <a href="https://www.linkedin.com/in/lindsayvansomeren/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="Lindsay VanSomeren LinkedIn" className="hover" /></a>
-            <a href="https://twitter.com/NotoriousDEBT" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="Lindsay VanSomeren Twitter" className="hover" /></a>
+            <a href="https://twitter.com/Science_Finance" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="Lindsay VanSomeren Twitter" className="hover" /></a>
           </div>
         </GradientSection>
         <ContactMain className="container">

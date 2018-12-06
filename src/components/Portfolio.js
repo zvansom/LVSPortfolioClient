@@ -14,6 +14,7 @@ const PortfolioMain = styled.main`
     padding-top: 4rem;
     font-size: 3rem;
     text-transform: uppercase;
+    text-align: center;
   }
   p {
     font-size: 2rem;

@@ -64,7 +64,7 @@ const About = () => (
         <div className="social-media">
           <a href="https://www.facebook.com/lindsay.vansomeren" target="_blank" rel="noopener noreferrer"><img className="hover" src={facebook} alt="Lindsay VanSomeren Facebook" /></a>
           <a href="https://www.linkedin.com/in/lindsayvansomeren/" target="_blank" rel="noopener noreferrer"><img className="hover" src={linkedin} alt="Lindsay VanSomeren LinkedIn" /></a>
-          <a href="https://twitter.com/NotoriousDEBT" target="_blank" rel="noopener noreferrer"><img className="hover" src={twitter} alt="Lindsay VanSomeren Twitter" /></a>
+          <a href="https://twitter.com/Science_Finance" target="_blank" rel="noopener noreferrer"><img className="hover" src={twitter} alt="Lindsay VanSomeren Twitter" /></a>
         </div>
       </div>
       <div className="about">
