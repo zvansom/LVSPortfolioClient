@@ -60,12 +60,13 @@ class Contact extends React.Component {
     sending: false,
   }
   
-  handleSubmit = async e => {
+  handleSubmit = e => {
     e.preventDefault();
     const {sending, ...data} = this.state;
-    // const res = await axios.post('http://localhost:7777/test', data)
-    //   .catch(err => { console.error(err); });
-    this.setState({sending: true});
+    console.log('form submitted');
+    axios.post('http://pure-harbor-53678.herokuapp.com/test', data)
+      .then( res => this.setState({ sending: true }))
+      .catch(err => { console.error(err); });
   }
 
   handleChange = e => { this.setState({[e.target.name]: e.target.value}) }
