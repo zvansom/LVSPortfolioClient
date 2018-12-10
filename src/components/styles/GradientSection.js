@@ -30,8 +30,10 @@ const GradientSection = styled.section`
     max-width: 250px;
     display: flex;
     justify-content: space-around;
-    margin: 0 auto;
-    margin-top: 2rem;
+    margin: 4rem auto;
+  }
+  .button {
+    margin: 4rem auto;
   }
   @media (max-width: 600px) {
     padding: 10rem 0;

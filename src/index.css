@@ -24,6 +24,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
+  background: var(--logo-grey);
 }
 *, *:before, *:after {
   box-sizing: inherit;

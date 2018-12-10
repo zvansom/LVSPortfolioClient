@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { financial, science, travel } from '../static/articles';
+import { financial, science, travel } from '../static/js/articles';
 
 import GradientSection from './styles/GradientSection';
 
