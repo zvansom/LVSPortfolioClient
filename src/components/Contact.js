@@ -91,10 +91,8 @@ class Contact extends React.Component {
       textContent: message,
       replyTo: { email, name: `${firstname} ${lastname}` } 
     };
-    console.log('form submitted');
-    axios.post('https://api.sndinblue.com/v3/smtp/email', body, { headers })
+    axios.post('https://api.sendinblue.com/v3/smtp/email', body, { headers })
       .then( res => {
-        console.log(res)
         this.setState({ 
           sending: true,
           error: false,

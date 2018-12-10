@@ -40,8 +40,6 @@ class Carousel extends React.Component {
   }
 
   checkWidth = () => {
-    console.log('width changing');
-    console.log(this);
     this.setState({ isDesktop: window.innerWidth > 800 });
   }
 
