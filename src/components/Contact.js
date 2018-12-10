@@ -8,8 +8,22 @@ import facebook from '../static/images/facebook.png';
 import linkedin from '../static/images/linkedin.png';
 import twitter from '../static/images/twitter.png';
 
+import { htmlContentBuilder } from '../static/js/mail';
+
 const ContactMain = styled.main`
   position: relative;
+  .error {
+  margin: 2rem auto;
+  display: flex;
+  justify-self: center;
+  border: 3px solid red;
+}
+.error p {
+  margin: 2rem auto;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 900;
+}
   p {
     text-align: center;
     margin: 6rem 0;
@@ -58,15 +72,35 @@ class Contact extends React.Component {
     subject: '',
     message: '',
     sending: false,
+    error: false,
   }
   
   handleSubmit = e => {
     e.preventDefault();
-    const {sending, ...data} = this.state;
+    const {subject, email, firstname, lastname, message} = this.state;
+    const headers = {
+      'content-type': 'application/json',
+      'api-key': process.env.REACT_APP_SENDINBLUE_API,
+    };
+    const body =   { 
+      tags: [ 'portfolio' ],
+      to: [ { email: 'lindsayvansomeren@gmail.com', name: 'Lindsay VanSomeren' } ],
+      sender: { email, name: `${firstname} ${lastname}` },
+      subject: `WRITING INQUIRY: ${subject}`,
+      htmlContent: htmlContentBuilder(email, message, firstname, lastname),
+      textContent: message,
+      replyTo: { email, name: `${firstname} ${lastname}` } 
+    };
     console.log('form submitted');
-    axios.post('http://pure-harbor-53678.herokuapp.com/test', data)
-      .then( res => this.setState({ sending: true }))
-      .catch(err => { console.error(err); });
+    axios.post('https://api.sndinblue.com/v3/smtp/email', body, { headers })
+      .then( res => {
+        console.log(res)
+        this.setState({ 
+          sending: true,
+          error: false,
+        });
+      })
+      .catch(err => { this.setState({ error: true }); });
   }
 
   handleChange = e => { this.setState({[e.target.name]: e.target.value}) }
@@ -84,6 +118,11 @@ class Contact extends React.Component {
           </div>
         </GradientSection>
         <ContactMain className="container">
+          {this.state.error && (
+            <div className="error">
+              <p>Uh oh! Something didn't work. Please try submitting the contact form again.</p>
+            </div>
+          )}
           <p>Drop me a line below</p>
           <form onSubmit={this.handleSubmit}>
             <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name *" />

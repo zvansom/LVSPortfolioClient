@@ -1,24 +1,24 @@
 // Import financial section images
-import centsai from '../static/images/carousel/financial/centsai.jpg';
-import chime from '../static/images/carousel/financial/chime.jpg';
-import creditSeasame from '../static/images/carousel/financial/credit-seasame.jpg';
-import magnifyMoney from '../static/images/carousel/financial/magnify.jpg';
-import superMoney from '../static/images/carousel/financial/supermoney.jpg';
-import creditKarma from '../static/images/carousel/financial/credit-karma.jpg';
+import centsai from '../../static/images/carousel/financial/centsai.jpg';
+import chime from '../../static/images/carousel/financial/chime.jpg';
+import creditSeasame from '../../static/images/carousel/financial/credit-seasame.jpg';
+import magnifyMoney from '../../static/images/carousel/financial/magnify.jpg';
+import superMoney from '../../static/images/carousel/financial/supermoney.jpg';
+import creditKarma from '../../static/images/carousel/financial/credit-karma.jpg';
 
 // Import science section images
-import untamed from '../static/images/carousel/science/untamed.jpg';
-import altitude from '../static/images/carousel/science/altitude.jpg';
-import wildfire from '../static/images/carousel/science/wildfire.jpeg';
-import genetics from '../static/images/carousel/science/genetics.jpeg';
-import scientific from '../static/images/carousel/science/scientific.png';
+import untamed from '../../static/images/carousel/science/untamed.jpg';
+import altitude from '../../static/images/carousel/science/altitude.jpg';
+import wildfire from '../../static/images/carousel/science/wildfire.jpeg';
+import genetics from '../../static/images/carousel/science/genetics.jpeg';
+import scientific from '../../static/images/carousel/science/scientific.png';
 
 // Import travel section images
-import farAndWide from '../static/images/carousel/travel/farandwide.jpg';
-import hostel from '../static/images/carousel/travel/hostel.jpg';
-import maccu from '../static/images/carousel/travel/machu_picchu_peru.jpg';
-import traps from '../static/images/carousel/travel/traps.jpg';
-import housesitting from '../static/images/carousel/travel/housesitting.jpg';
+import farAndWide from '../../static/images/carousel/travel/farandwide.jpg';
+import hostel from '../../static/images/carousel/travel/hostel.jpg';
+import maccu from '../../static/images/carousel/travel/machu_picchu_peru.jpg';
+import traps from '../../static/images/carousel/travel/traps.jpg';
+import housesitting from '../../static/images/carousel/travel/housesitting.jpg';
 
 const financial = [
   {
